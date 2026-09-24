@@ -13,6 +13,12 @@
 function getNumbersInRange(start, end) {
   // TODO: your code here
 
+  for (let start ; start< end; start++) {
+    myArray.push(start);
+    return myArray
+  
+}
+
 }
 
 console.log(getNumbersInRange(1, 5));  // [1, 2, 3, 4, 5]

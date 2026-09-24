@@ -1,8 +1,8 @@
 # JavaScript Arrays & Array Methods — Student Guide (Part 2)
 
-*AP CSP: Programming in JavaScript*
+_AP CSP: Programming in JavaScript_
 
-In Part 1, you learned how to repeat code with `while` and `for` loops. Now let's apply that to one of the most useful data structures in programming: the **array** — a single variable that holds a whole *list* of values.
+In Part 1, you learned how to repeat code with `while` and `for` loops. Now let's apply that to one of the most useful data structures in programming: the **array** — a single variable that holds a whole _list_ of values.
 
 ---
 
@@ -20,8 +20,8 @@ Instead of creating five separate variables (`student1`, `student2`, ...), you s
 
 Every item in an array has a position number called an **index**, starting at `0` (not `1`!).
 
-| Index | 0 | 1 | 2 | 3 | 4 |
-|---|---|---|---|---|---|
+| Index | 0         | 1        | 2        | 3      | 4        |
+| ----- | --------- | -------- | -------- | ------ | -------- |
 | Value | "Charlie" | "Olivia" | "Rodney" | "Bill" | "London" |
 
 ```js
@@ -30,7 +30,7 @@ console.log(students[2]); // "Rodney"
 console.log(students[4]); // "London"
 ```
 
-> **Why start at 0?** It trips everyone up at first — just remember: the *first* item is at index `0`, and the *last* item is at index `length - 1`.
+> **Why start at 0?** It trips everyone up at first — just remember: the _first_ item is at index `0`, and the _last_ item is at index `length - 1`.
 
 ### `.length` — How Many Items Are in the Array
 
@@ -56,6 +56,7 @@ printAll(students);
 ```
 
 **Walking through it:**
+
 - `i` starts at `0` and increases by 1 each pass (`i++`), just like any `for` loop.
 - The condition `i < list.length` makes sure the loop stops exactly at the last valid index (since `list.length` is `5`, this stops after `i = 4`, which is correct — indexes only go up to `4`).
 - `list[i]` uses the current value of `i` to grab that position out of the array.
@@ -68,7 +69,7 @@ This pattern — `for (let i = 0; i < arr.length; i++)` — is so common it's wo
 
 ## 3. Arrow Functions (A Shorter Way to Write Functions)
 
-Before we get to array *methods*, you need to recognize **arrow function** syntax, since almost all array methods use it.
+Before we get to array _methods_, you need to recognize **arrow function** syntax, since almost all array methods use it.
 
 ```js
 function add1(a, b) {
@@ -80,10 +81,10 @@ const add2 = (a, b) => a + b;
 console.log(add2(3, 4)); // 7
 ```
 
-`add1` and `add2` do the *exact same thing*. The arrow function `add2` is just a shorter way of writing a function:
+`add1` and `add2` do the _exact same thing_. The arrow function `add2` is just a shorter way of writing a function:
 
-| Regular function | Arrow function |
-|---|---|
+| Regular function                        | Arrow function                  |
+| --------------------------------------- | ------------------------------- |
 | `function add1(a, b) { return a + b; }` | `const add2 = (a, b) => a + b;` |
 
 - Drop the `function` keyword, put `=>` (the "arrow") between the parameters and the body.
@@ -91,8 +92,10 @@ console.log(add2(3, 4)); // 7
 
 ```js
 // These do the same thing:
-const square = (n) => { return n * n; };  // explicit return, with { }
-const square2 = (n) => n * n;             // implicit return, no { }
+const square = (n) => {
+  return n * n;
+}; // explicit return, with { }
+const square2 = (n) => n * n; // implicit return, no { }
 ```
 
 You'll see arrow functions constantly with array methods, usually written right inside the method call, like `(student) => console.log(student)`.
@@ -101,7 +104,7 @@ You'll see arrow functions constantly with array methods, usually written right 
 
 ## 4. Array Methods — Built-In Shortcuts for Common Tasks
 
-JavaScript arrays come with built-in **methods** — ready-made functions attached to every array — so you often don't need to hand-write a `for` loop at all. This is abstraction again: the method hides the looping details and lets you just describe *what* you want.
+JavaScript arrays come with built-in **methods** — ready-made functions attached to every array — so you often don't need to hand-write a `for` loop at all. This is abstraction again: the method hides the looping details and lets you just describe _what_ you want.
 
 ### `.forEach()` — Do Something With Every Item
 
@@ -109,9 +112,10 @@ JavaScript arrays come with built-in **methods** — ready-made functions attach
 students.forEach((student) => console.log(student));
 ```
 
-This does the same job as our `printAll` function above, but in one line. `.forEach()` runs the arrow function once for *every* item in the array, automatically passing in each item (here, named `student`) — no manual index or loop needed.
+This does the same job as our `printAll` function above, but in one line. `.forEach()` runs the arrow function once for _every_ item in the array, automatically passing in each item (here, named `student`) — no manual index or loop needed.
 
 **Compare the two approaches:**
+
 ```js
 // Manual for loop
 for (let i = 0; i < students.length; i++) {
@@ -121,6 +125,7 @@ for (let i = 0; i < students.length; i++) {
 // .forEach()
 students.forEach((student) => console.log(student));
 ```
+
 Same result, but `.forEach()` is shorter and reads almost like English: "for each student, log the student."
 
 ### `.find()` — Get the First Item That Matches
@@ -134,7 +139,7 @@ console.log(found); // "Olivia"
 
 > Notice this uses `==` in the original code — for consistency with the comparison operators guide, prefer `===` in your own code: `student === "Olivia"`.
 
-### `.filter()` — Get *All* Items That Match
+### `.filter()` — Get _All_ Items That Match
 
 ```js
 let numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -142,14 +147,14 @@ const even = numbs.filter((el) => el % 2 == 0);
 console.log(even); // [2, 4, 6, 8, 10]
 ```
 
-While `.find()` gives you one match, `.filter()` gives you a **brand new array** containing *every* item that passes the test. Here, `el % 2 == 0` checks if a number is even, so `even` ends up holding only the even numbers from `numbs`.
+While `.find()` gives you one match, `.filter()` gives you a **brand new array** containing _every_ item that passes the test. Here, `el % 2 == 0` checks if a number is even, so `even` ends up holding only the even numbers from `numbs`.
 
 ### `.find()` vs. `.filter()` — Key Difference
 
-| | Returns | Example use |
-|---|---|---|
-| `.find()` | The **first** matching item (or `undefined`) | "Find the student named Olivia" |
-| `.filter()` | A **new array** of *all* matching items | "Get every even number in this list" |
+|             | Returns                                      | Example use                          |
+| ----------- | -------------------------------------------- | ------------------------------------ |
+| `.find()`   | The **first** matching item (or `undefined`) | "Find the student named Olivia"      |
+| `.filter()` | A **new array** of _all_ matching items      | "Get every even number in this list" |
 
 ---
 
@@ -165,16 +170,16 @@ const doubled = numbs.map((n) => n * 2);
 console.log(doubled); // [2, 4, 6, 8, 10]
 ```
 
-`.map()` is like `.forEach()`, but instead of just *doing* something with each item, it **builds a new array** out of whatever your arrow function returns for each item.
+`.map()` is like `.forEach()`, but instead of just _doing_ something with each item, it **builds a new array** out of whatever your arrow function returns for each item.
 
 ### `.push()` and `.pop()` — Add or Remove From the End
 
 ```js
-students.push("Maria");   // adds "Maria" to the end
-console.log(students);    // [...original students, "Maria"]
+students.push("Maria"); // adds "Maria" to the end
+console.log(students); // [...original students, "Maria"]
 
-students.pop();            // removes the last item
-console.log(students);     // back to the original list
+students.pop(); // removes the last item
+console.log(students); // back to the original list
 ```
 
 ### `for...of` — Another Way to Loop Through an Array
@@ -194,8 +199,8 @@ This is a cleaner alternative to the index-based `for` loop when you don't actua
 ```js
 const arr = [10, 20, 30];
 
-arr[0];              // access by index → 10
-arr.length;           // number of items → 3
+arr[0]; // access by index → 10
+arr.length; // number of items → 3
 
 // Manual for loop
 for (let i = 0; i < arr.length; i++) {
@@ -207,20 +212,20 @@ for (const item of arr) {
   console.log(item);
 }
 
-arr.forEach((item) => console.log(item));      // do something with each item
-arr.find((item) => item > 15);                  // first match → 20
-arr.filter((item) => item > 15);                // all matches → [20, 30]
-arr.map((item) => item * 2);                    // new array → [20, 40, 60]
-arr.push(40);                                    // add to end
-arr.pop();                                       // remove from end
+arr.forEach((item) => console.log(item)); // do something with each item
+arr.find((item) => item > 15); // first match → 20
+arr.filter((item) => item > 15); // all matches → [20, 30]
+arr.map((item) => item * 2); // new array → [20, 40, 60]
+arr.push(40); // add to end
+arr.pop(); // remove from end
 ```
 
-| Method | Returns | Use it when... |
-|---|---|---|
-| `.forEach()` | `undefined` (just runs code) | You want to *do something* with each item (print, log, etc.) |
-| `.find()` | One item (or `undefined`) | You want the *first* item matching a condition |
-| `.filter()` | A new, shorter array | You want *every* item matching a condition |
-| `.map()` | A new, same-length array | You want to *transform* every item into something new |
+| Method       | Returns                      | Use it when...                                               |
+| ------------ | ---------------------------- | ------------------------------------------------------------ |
+| `.forEach()` | `undefined` (just runs code) | You want to _do something_ with each item (print, log, etc.) |
+| `.find()`    | One item (or `undefined`)    | You want the _first_ item matching a condition               |
+| `.filter()`  | A new, shorter array         | You want _every_ item matching a condition                   |
+| `.map()`     | A new, same-length array     | You want to _transform_ every item into something new        |
 
 ---
 
@@ -237,13 +242,13 @@ arr.pop();                                       // remove from end
 
 ## 8. Key Vocabulary
 
-| Term | Meaning |
-|---|---|
-| **array** | An ordered list of values stored in one variable |
-| **index** | A value's position in an array, starting at `0` |
-| **element** | A single value/item stored inside an array |
-| **`.length`** | A property that tells you how many items are in an array |
-| **arrow function** | A shorthand way to write a function using `=>` |
-| **implicit return** | Returning a value automatically, without the `return` keyword, in a one-line arrow function |
-| **array method** | A built-in function attached to arrays (`.forEach()`, `.find()`, `.filter()`, `.map()`, etc.) |
-| **callback function** | A function passed *into* another function (like the arrow function you give to `.forEach()`) to be run for each item |
+| Term                  | Meaning                                                                                                              |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **array**             | An ordered list of values stored in one variable                                                                     |
+| **index**             | A value's position in an array, starting at `0`                                                                      |
+| **element**           | A single value/item stored inside an array                                                                           |
+| **`.length`**         | A property that tells you how many items are in an array                                                             |
+| **arrow function**    | A shorthand way to write a function using `=>`                                                                       |
+| **implicit return**   | Returning a value automatically, without the `return` keyword, in a one-line arrow function                          |
+| **array method**      | A built-in function attached to arrays (`.forEach()`, `.find()`, `.filter()`, `.map()`, etc.)                        |
+| **callback function** | A function passed _into_ another function (like the arrow function you give to `.forEach()`) to be run for each item |
