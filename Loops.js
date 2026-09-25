@@ -12,13 +12,14 @@
 // Use a for loop and .push() to build the array one number at a time.
 function getNumbersInRange(start, end) {
   // TODO: your code here
-let result= []
-for(let i = start;i <= end; i++){result.push(i);}
-return result;
+
+  for (let start ; start< end; start++) {
+    myArray.push(start);
+    return myArray
+  
+}
 
 }
-g
-
 
 console.log(getNumbersInRange(1, 5));  // [1, 2, 3, 4, 5]
 console.log(getNumbersInRange(10, 10)); // [10]
