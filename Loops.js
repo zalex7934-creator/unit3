@@ -46,9 +46,14 @@ console.log(sumRange(4, 4));   // 4
 
 // ---------- Problem 3: Countdown ----------
 // Return an array counting down from n to 1.
-// Use a while loop, not a for loop.
+// Use a while loop, not a for loop.\
+
 function countdown(n) {
   // TODO: your code here
+  const count =[];
+while (n>0){count.push(n); n-=1 }
+return count;
+
 
 }
 
@@ -64,7 +69,8 @@ console.log(countdown(8)); // [8, 7, 6, 5, 4, 3, 2, 1]
 // str[i] or str.charAt(i).
 function countVowels(str) {
   // TODO: your code here
-
+const vowels= 'aelou'
+str.includes(foreach(vowels))
 }
 
 console.log(countVowels("hello"));      // 2
