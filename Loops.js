@@ -69,8 +69,13 @@ console.log(countdown(8)); // [8, 7, 6, 5, 4, 3, 2, 1]
 // str[i] or str.charAt(i).
 function countVowels(str) {
   // TODO: your code here
-const vowels= 'aelou'
-str.includes(foreach(vowels))
+let count=0
+for (let i=0; i < str.length; i++){
+ let char= str[i];  
+ let (char = "a"|| char === "e" || char === "i" || char=== "o"|| char=== "u" 
+}
+ 
+
 }
 
 console.log(countVowels("hello"));      // 2
