@@ -127,3 +127,4 @@ function multiplicationTableSkipDiagonal(n) {
 }
 
 console.log(multiplicationTableSkipDiagonal(3));
+//bowNUMlack
